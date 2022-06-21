@@ -1,0 +1,26 @@
+npm init= inicializar un proyecto, crear el packjson
+npm init -y = inicializar un proyecto y crear el packjson con valores predeterminados
+npm install= instlaar paquetes y dependencias del packjson
+npm set "configuracion" init.author.name o .email init.license etc= establecer valores generales en el npm del equipo
+npm instal "nombre_paquete") -D / --save-dev= Instalar dependencia solo para ambiente desarrollo.
+npm instal "nombre_paquete") -S / --save= Instalar dependencia solo para ambiente  de produccion.
+npm list -g --depth 0= ver el listado de paquetes instalados globalmente
+npm install "paquete" --dry-run = simular la instalacion de un paquete, para obtener los datos de todo lo que se instalaria
+npm install "paquete" -f / force= instalacion forzada de una dependencia en su ultima version que esta en npm
+npm list= listado de dependencias en en proyecto
+npm outdate=  ver paquetes deactualizados 
+npm outdate -dd=  ver salida del comando o de cualquier otro mas especifico
+npm install "paquete"@1.12.3 = instalar una version en especifico de un paquete
+npm install "paquete"@latest = instalar ultima version de un paquete 
+npm update= actualizar todos los paquetes instalados
+npm update "paquete" --depth 2= actualizar un paquete  con la profundidad de sus paquetes secundarios tambien
+npm unistall "paquete"= desintalar paquete
+npm unistall "paquete" --no-save= desintalar un paquete del nodemodules pero sigue apareciendo en el packjson
+npm cache clean --force= Borrar el cache de npm para evitar conflictos al instalar y lo haga directamente con los servidores npm
+npm cache verify= verificar el cache de npm  
+rm -rf node_modules/= borrar carpeta de node modules
+paquete rimraf= sirve para eliminar la carpeta de node_modules con un comando
+npm audit= revisar las vulnerabilidades de nuestro proyecto mas detallado
+npm audit json= muestra la informacion anterior en tipo json
+npm audit fix= arreglar todas la vulnerbilidades actualizarlas 
+
