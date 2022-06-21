@@ -1,0 +1,84 @@
+comandos git
+LLAVES SSH = Importantisimas para incriptar la transferencias de archivos a un repositorio web, en el cual creas unas llames privadas que son quienes reciben las llaves publicas que transportan la informacion y quienes pueden decifrarlas. los archivos de estas no tienen ningun extension en el nombre
+ -a agregar
+-m mensaje
+git config --global user.name "" configuracion global del nombre de usuario
+git config --global user.email "" configuracion global del email
+git config --global --list Ver la configuracion global de git en el equipo
+git init= crear el git dentro de un archivo
+git add= añadir un archivo de la carpeta
+git add .= agregar todos los archivos que se encuentren dentro de la carpeta
+git config= ver comandos principal de git
+git commit = estado y modificar/agregar el archivo
+git commit -m= se modifica el archivo y se añade un mensaje
+git commit -a -m= se modifican todos los archivos y se añade un mensaje
+git status= informe todos los archivo dentro del git
+git log= informe de todos los commits
+git show= visualizar los cambios del commit actual con el anterior
+git checkout (codigo de commit)=regresar algun commit anterior
+git checkout maste= regresar al archivo principal
+git checkout (nombre rama)=indicar  la rama en la que se esta trabajando
+git branch = mostrar ramas existentes
+git branch (crear nombre de la rama)= crear una rama del archivo principal
+git branch -M main= cambiar nombre de la rama principal
+git branch - :Rama Borrar rama de repositorio remoto
+git branch -D Rama Borrar rama de repositorio local
+git diff hash1 has2= diferencias entre commits realizados
+git stash= guardar los cambios temporalmente sin realizar un commit
+git stash branch (nombre de la rama)= guarda los cambios temporales en una rama y si gusta se realiza commit en esa rama
+git stash pop= colocar esos cambios temporales, ya que cuando los guarda los quita
+git stash drop= borrar lo guardado temporalmente
+git clean -dry-run= muestra los archivos nuevos que no se han rastreado
+git clean -f= borra los archivos que no han sido rastreados
+git merge (nombre de la rama)= se indica de que rama se va a traer lo cambios para añadirlos o combinarlos al principal o a otro archivo.
+git shortlog -sn= visualizar quienes ttrabajron en el proyecto
+git shortlog -sn -all= ver las persona que trabajron en el proyecto mas sus ramas borradas
+git shortlog -sn -all --no-merge = ver los mismo pero sin los merge
+git blame (cualquier comando)= se muestra muchos mas claro de que se trata el comando
+git remote add origin (link respositorio del proyecto en la pagina de git)= sincroniza el proyecto con github gitlab etc.
+git push origin (master o rama)= carga el archivo al respositorio web de git
+git clone (link del repositorio code de git)= descarga el proyecto del repositorio web de git
+git remote -v= visualizar el repositorio web donde esta conectado el proyecto
+git remote remove origin= desvincular el proyecto del respositorio web
+git fetch origin= actualiza los cambios a la carpeta local
+Si realmente desea eliminar todo el repositorio, dejando solo el directorio de trabajo, entonces debería ser tan simple como esto.
+
+rm -rf .git Si realmente desea eliminar todo el repositorio, dejando solo el directorio de trabajo, entonces debería ser tan simple como esto
+git rm --cached: Elimina los archivos del área de Staging y del próximo commit pero los mantiene en nuestro disco duro.
+git rm --force: Elimina los archivos de Git y del disco duro. Git siempre guarda todo, por lo que podemos acceder al registro de la existencia de los archivos, de modo que podremos recuperarlos si es necesario (pero debemos usar comandos más avanzados).
+git reset --soft: Borramos todo el historial y los registros de Git pero guardamos los cambios que tengamos en Staging, así podemos aplicar las últimas actualizaciones a un nuevo commit.
+git reset --hard: Borra todo. Todo todito, absolutamente todo. Toda la información de los commits y del área de staging se borra del historial.
+git reset HEAD: Este es el comando para sacar archivos del área de Staging. No para borrarlos ni nada de eso, solo para que los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add, por supuesto.
+git reset volvemos al pasado sin la posibilidad de volver al futuro. Borramos la historia y la debemos sobreescribir. No hay vuelta atrás.
+
+nano .gitignore = no subir cierto archivo en los push
+__Nombrecarpeta o archivo__/*
+
+git amend Corregir los mensajes de un commit que se hicieron mal, no queda en el historial del repositorio
+
+git config --global alias.nombre "shortlog"  en linux se puede renombrar comandos para sustituir y evitar escribirlo exaustibamente una y otra vez
+alias nombre = codigo  Este nos guarda en un alias el codigo que queramos para evitar volver a escribirlo
+
+git log --grep 
+git cherry pick  para retomar los cambios de un commit anterior sin quedar registrado en el historial del repositorio
+ 
+gitk te presenta una interfaz grafica con la descripcion del historial del repositorio
+
+git tag sirve para etiquetar
+git tag -a nombre -m "mensaje" 1616516hash etiquetar un commit como referencia
+
+git log -all  --graph te muestra todo el historial completo de los commits con las ramas
+
+git log --all --graph --decorate -oneline muestra todo el historial completo un poco mas comprimido la informacion
+
+git rebase  Resecribe la historia del repositorio añade la rama creada a la historia principal comom un parche sin quedar en el historial ESTO SOLO SE HACE EN REPOSITORIOS LOCALES NO REMOTOS
+Git rebase Rama es la rama que le vamos añadir a la rama en la que estamos trabajando para actualizarla
+despues de esto realizamos otro git Rebase a la rama principal para tener todo actualizado en la principal
+
+----------LLAVE SSH-----------------------------------
+(comandos de linux)
+ssh-keygen -t rsa -b 4096 -johansvsr@gmail.com   =Genera la llave ssh  y se crea solo este directorio ('/home/johan/.ssh'.)
+eval "$(ssh-agent -s)"  =evaluamos si se genero correctamente
+ssh-copy-id johansvsr@gmail.com  =Generamos una copia de la llave en nuestra carpeta ssh
+cd /.ssh  =entramos a la carpeta ssh 
+cat id_rsa.pub  = nos muestra nuestra llave publica que copiamos y pegamos en github
